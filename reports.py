@@ -3,7 +3,7 @@ import webbrowser
 import os
 from filestack import Client
 
-API_KEY = 'AYjbzUhVfTyeeqUzq2TaCz'
+API_KEY = 'ENTER_YOUR_OWN_API_KEY_FOR_FILE_STACK'
 class PDFReport:
     """Creates pdf file about the data of bill shares by each employee."""
 
