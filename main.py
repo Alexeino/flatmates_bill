@@ -1,5 +1,6 @@
 import webbrowser
-from flat import Bill, Flatmate    
+from flat import Bill, Flatmate
+from reports import FileSharer    
 from reports import PDFReport
 
 amount = float(input("Enter total bill amount - "))
@@ -23,3 +24,5 @@ print(f"{flatmate2.name} pays: ",flatmate2.pays(bill,flatmate1))
 pdf = PDFReport("{}.pdf".format(bill.period))
 pdf.generate(flatmate1=flatmate1,flatmate2=flatmate2,bill=bill)
 
+filesharer = FileSharer(filepath=pdf.filename)
+print(filesharer.share())

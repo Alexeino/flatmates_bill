@@ -1,6 +1,9 @@
 from fpdf import FPDF
 import webbrowser
 import os
+from filestack import Client
+
+API_KEY = 'AYjbzUhVfTyeeqUzq2TaCz'
 class PDFReport:
     """Creates pdf file about the data of bill shares by each employee."""
 
@@ -40,3 +43,17 @@ class PDFReport:
 
         # To open the pdf file on default browser
         webbrowser.open(self.filename)
+
+class FileSharer:
+
+    def __init__(self,filepath,api_key=API_KEY):
+        self.filepath=filepath
+        self.api_key=api_key
+
+    def share(self):
+        client = Client(self.api_key)
+        new_filelink = client.upload(filepath = self.filepath)
+        return new_filelink.url
+
+        
+
